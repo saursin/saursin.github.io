@@ -5,7 +5,7 @@ description: An open-source 32-bit RISC-V soft-core processor.
 img: assets/img/projects/riscv-atom/atom_icon.png
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
 RISC-V Atom project consists of an embedded-class soft-core processor and a complete software development environment built around it. RISC-V Atom is proven on silicon in the form of HydrogenSoC, which has been tested on Spartan-6, Cyclone-V, DE0-CV and Sipeed Tang Primer 20K FPGA boards.

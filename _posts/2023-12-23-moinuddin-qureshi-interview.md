@@ -4,6 +4,7 @@ title: 'Towards Better Row-Hammer Mitigation through Dynamic Aggressor Row Quara
 date: 2023-12-23
 tags:
   - interview
+  - hardware-security
 ---
 
 Dynamic Random Access Memory (DRAM) is the memory technology of choice for main memory in any computing system from personal handheld devices like smartphones to High-Performance Computing (HPC) data centers. DRAM offers a relatively high storage density as compared to Static Random Access Memory (SRAM) at a fraction of the cost. But as manufacturers try to scale down the DRAM cells, we see new vulnerabilities that make DRAM susceptible to a wide range of attacks. We are talking about corrupting critical data, recovering encryption keys, and getting super-user privileges in a system. 

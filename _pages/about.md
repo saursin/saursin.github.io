@@ -13,8 +13,8 @@ profile:
     <p>266 Ferst Drive, KACB 2337</p>
     <p>Atlanta, GA 30332-0765</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -22,10 +22,12 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+<div style="margin-top: 25px;"></div>
 
 I am a 3rd year Ph.D. student at the School of Computer Science at [Georgia Tech](https://www.gatech.edu/). 
 At Tech, I am part of the [HPArch Lab](https://sites.gatech.edu/hparch/) advised by [Prof. Hyesoon Kim](https://hyesoon.github.io/). 
@@ -35,31 +37,22 @@ Electronics and Communication Engineering (ECE) at the Indian Institute of Infor
 
 *Feel free to navigate around!*
 
-**\*\*UNDER MAINTAINANCE:\*\* Please use the [old site](https://sites.google.com/view/saursin/home)**
-
-
 <div style="margin-top: 50px;"></div>
 
 
-### Research Interests
-I am broadly interested in the domain of Computer Architecture and Hardware Security. Recently I've been focussing on Security and Memory Safety in GPUs. 
+## Research Interests
 
-- Computer Architecture
-- Hardware Security
-- GPU Security and Reliability
+<span class="badge bg-primary">Computer Architecture</span>
+<span class="badge bg-primary">Hardware Security</span>
+<span class="badge bg-primary">GPU Security and Reliability</span>
 
+I am broadly interested in the domain of Computer Architecture and Hardware Security. Recently I've been focussing on GPU Security and Memory Safety in GPUs. 
 
-## Bio
+My past research lies broadly in the domain of Computer Architecture, Systems, and Digital VLSI design. During my undergrad, I worked on the design, implementation, and evaluation of approximate arithmetic circuits such as Adders, Multipliers, and Multiply and Accumulate (MAC) units. These were designed to achieve better area, power, and timing parameters than their accurate counterparts, while at the same time, maintaining a respectable quality of results on fault-tolerant applications like image processing and machine learning. 
 
-My past research lies broadly in the domain of Computer Architecture, Systems, and Digital VLSI design. 
+I am also a RISC-V enthusiast. My bachelor's thesis was "CLAP: Cross-Layer Approximate Computing on Custom RISC-V Processors" as a part of which I modified the Atom processor to incorporate a tightly integrated approximate computing unit. The system was capable of executing approximate computing instructions natively using a non-standard extension to the RISC-V ISA. I also worked on adding support for a C & assembly library called AxKit.
 
-During my undergrad, I worked on the design, implementation, and evaluation of approximate arithmetic circuits such as Adders, Multipliers, and Multiply and Accumulate (MAC) units. These were designed to achieve better area, power, and timing parameters than their accurate counterparts, while at the same time, maintaining a respectable quality of results on fault-tolerant applications like image processing and machine learning. 
-
-I am also a RISC-V enthusiast, checkout RISC-V Atom, a RISC-V SoC platform that I've been working on.
-
-My bachelor's thesis was called "CLAP: Cross-Layer Approximate Computing on Custom RISC-V Processors" as a part of which I modified the Atom processor to incorporate a tightly integrated approximate computing unit. The system was capable of executing approximate computing instructions natively using a non-standard extension to the RISC-V ISA. I also worked on adding support for a C & assembly library called AxKit.
-
-My undergraduate research has been supervised by Dr. Dip Sankar Banerjee (Assistant Professor, CSE Dept, Indian Institute of Technology Jodhpur) and Dr. Babita Jajodia (Assistant Professor, ECE Dept, Indian Institute of Information Technology Guwahati).
+My undergraduate research has been supervised by [Prof. Dip Sankar Banerjee](https://sites.google.com/site/dipsankarban/) and [Prof. Babita Jajodia](https://sites.google.com/view/drbjajodia/).
 
 
 

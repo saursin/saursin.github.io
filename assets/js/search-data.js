@@ -41,6 +41,17 @@ ninja.data = [{
             window.location.href = "/blog/2023/moinuddin-qureshi-interview/";
           
         },
+      },{id: "post-forged-in-sparks-the-story-of-bramhaputra-the-battlebot",
+        
+          title: "Forged in Sparks: The Story of Bramhaputra the BattleBot",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2020/bramhaputra/";
+          
+        },
       },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",

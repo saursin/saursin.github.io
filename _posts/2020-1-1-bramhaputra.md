@@ -1,10 +1,9 @@
 ---
 layout: post
 title: 'Forged in Sparks: The Story of Bramhaputra the BattleBot'
-date: 2020-12-23
+date: 2020-1-1
 tags:
-  - interview
-  - hardware-security
+  - project
 images:
   compare: true
   slider: true

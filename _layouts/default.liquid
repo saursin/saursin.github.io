@@ -56,27 +56,63 @@
 </html>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('pre > code.language-wavedrom').forEach((codeBlock, idx) => {
-    const raw = codeBlock.textContent.trim();
+(() => {
+  // ---- helpers ----
+  const isDark = () => {
+    const html = document.documentElement;
+    const attr = (html.getAttribute('data-theme') || html.dataset.theme || '').toLowerCase();
+    if (attr === 'dark')  return true;
+    if (attr === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
 
-    // URL-encode the WaveJSON/JSON5 text
-    const encoded = encodeURIComponent(raw);
-
-    // Create an <img> pointing to the WaveDrom server
-    const img = document.createElement('img');
-    img.src = `https://svg.wavedrom.com/${encoded}`;
-    img.alt = `WaveDrom diagram ${idx}`;
-
-    // Add white background and optional styling
-    img.style.background = 'white';
+  const styleImg = (img, dark) => {
+    // base look
+    img.style.display = 'block';
     img.style.padding = '0.5rem';
-    img.style.border = '1px solid #ddd';
     img.style.borderRadius = '0.25rem';
-    img.style.display = 'block';       // optional: remove inline gap
+    // per-theme
+    if (dark) {
+      img.style.filter = 'invert(1) hue-rotate(180deg)';
+      img.style.background = 'transparent';
+    } else {
+      img.style.filter = '';
+      img.style.background = 'white';
+    }
+  };
 
-    // Replace the code block with the image
-    codeBlock.parentElement.replaceWith(img);
+  const restyleAll = () => {
+    const dark = isDark();
+    document.querySelectorAll('img[data-wavedrom="1"]').forEach(img => styleImg(img, dark));
+  };
+
+  // ---- render + wire up ----
+  document.addEventListener('DOMContentLoaded', () => {
+    // Convert all ```wavedrom fences to <img> from the server
+    document.querySelectorAll('pre > code.language-wavedrom').forEach((codeBlock, idx) => {
+      const raw = codeBlock.textContent.trim();
+      const encoded = encodeURIComponent(raw);
+
+      const img = document.createElement('img');
+      img.setAttribute('data-wavedrom', '1');
+      img.alt = `WaveDrom diagram ${idx}`;
+      img.src = `https://svg.wavedrom.com/${encoded}`;
+
+      styleImg(img, isDark());
+      codeBlock.parentElement.replaceWith(img);
+    });
+
+    // Watch al-folio theme toggles (data-theme on <html>)
+    const mo = new MutationObserver(restyleAll);
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    // Also watch OS theme changes
+    if (window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) mq.addEventListener('change', restyleAll);
+      else if (mq.addListener) mq.addListener(restyleAll);
+    }
   });
-});
+})();
 </script>
+

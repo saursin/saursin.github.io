@@ -37,8 +37,9 @@ a debug medium such as JTAG to control and inspect the execution on the platform
 | 0x2  | WMASK     | Warp mask register             |
 | 0x3  | WSTATUS   | Warp status register           |
 | 0x4  | DCTRL     | Debug Control Register         |
-| 0x5  | INJECT    | Instruction Injection Register |
-| 0x6  | DSCRATCH  | Debug Scratch Register         |
+| 0x5  | DPC       | Debug Program Counter Register |
+| 0x6  | INJECT    | Instruction Injection Register |
+| 0x7  | DSCRATCH  | Debug Scratch Register         |
 
 
 #### 0x0: PLATFORM: Platform Information Register
@@ -134,7 +135,20 @@ a debug medium such as JTAG to control and inspect the execution on the platform
 | ndmreset (NR)    | 1     | RW      | write 1 to assert ndmreset output for `ndmresetcyc` cycles, Read returns 1 if ndmreset is currently asserted |
 | dmactive (DA)    | 1     | RW      |  write 1 to enable debug module, when 0, all debug module registers are reset |
 
-#### 0x5: INJECT: Instruction Injection Register
+#### 0x5: DPC: Debug Program Counter Register
+
+```wavedrom
+{reg: [
+    {bits: 32, name: 'pc', attr: ['32']}
+], config:{fontsize: 12}}
+```
+
+| Subfield  | Width | Access  | Description |
+|:---------:|:-----:|:-------:|:-----------:|
+| pc        | 32    | RW      | Program counter of the warp selected by `DSELECT.warpsel` <br> value is valid if warp is halted |
+
+
+#### 0x6: INJECT: Instruction Injection Register
 ```wavedrom
 {reg: [
     {bits: 32, name: 'instr', attr: ['32']}
@@ -145,7 +159,8 @@ a debug medium such as JTAG to control and inspect the execution on the platform
 |:---------:|:-----:|:-------:|:-----------:|
 | instr     | 32    | RW      | Instruction to be injected when `DCTRL.injectreq` is asserted |
 
-#### 0x6: DSCRATCH: Debug Scratch Register
+
+#### 0x7: DSCRATCH: Debug Scratch Register
 DSCRATCH register is exposed to core as a per-thread CSR register. It can also be read/written by the debugger through backdoor access. 
 
 ```wavedrom

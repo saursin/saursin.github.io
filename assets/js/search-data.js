@@ -67,8 +67,8 @@ ninja.data = [{
           description: "An open-source 32-bit RISC-V soft-core processor.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/riscv-atom/";
-            },},{id: "projects-vortex-debug-extension",
-          title: 'Vortex Debug Extension',
+            },},{id: "projects-vxdebug-vortex-debug-extension",
+          title: 'VxDebug: Vortex Debug Extension',
           description: "External debug spec for Vortex GPGPU",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vortex_debug/";

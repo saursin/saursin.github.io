@@ -1,0 +1,25 @@
+{% comment %}
+  Related Posts Section for Project Pages
+  Usage: {% include project_related_posts_section.liquid %}
+  Front matter: project_posts: [slug1, slug2]
+{% endcomment %}
+{%- if page.project_posts and page.project_posts.size > 0 -%}
+<div class="related-posts-section">
+  <h2>Related Posts</h2>
+  <ul class="related-posts-list">
+    {%- for slug in page.project_posts -%}
+      {%- for post in site.posts -%}
+        {%- if post.url contains slug -%}
+          <li>
+            <a href="{{ post.url | relative_url }}">
+              <span class="post-title">{{ post.title | default: "Untitled" }}</span>
+              <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+            </a>
+          </li>
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+</div>
+{%- endif -%}

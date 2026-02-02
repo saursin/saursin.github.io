@@ -1423,3 +1423,117 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+// Related Posts for Projects
+
+// Hover dropdown on project cards
+.related-posts-dropdown {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  .related-posts-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    background: transparent;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 4px;
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    i { font-size: 0.8rem; }
+    .btn-text { font-weight: 500; }
+  }
+
+  .related-posts-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+    list-style: none;
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+
+    li { margin: 0; padding: 0; }
+
+    a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: var(--global-text-color);
+      font-size: 0.85rem;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--global-hover-color);
+        color: var(--global-hover-text-color);
+      }
+    }
+  }
+
+  &:hover {
+    .related-posts-btn {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+    .related-posts-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// Section on individual project pages
+.related-posts-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+
+  h2 {
+    color: var(--global-theme-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .related-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+      &:last-child { border-bottom: none; }
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--global-text-color);
+        text-decoration: none;
+        &:hover { color: var(--global-theme-color); }
+
+        .post-title { font-weight: 500; }
+        .post-date {
+          font-size: 0.875rem;
+          color: var(--global-text-color-light);
+        }
+      }
+    }
+  }
+}

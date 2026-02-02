@@ -1,0 +1,14 @@
+{% comment %}
+  Related Posts Dropdown for Project Cards
+  Usage: {% include project_related_posts_button.liquid project=project %}
+  Front matter: project_posts: [slug1, slug2]
+{% endcomment %}
+{%- if include.project.project_posts and include.project.project_posts.size > 0 -%}
+<div class="related-posts-dropdown" onclick="event.stopPropagation();">
+  <span class="related-posts-btn">
+    <i class="fa-solid fa-newspaper"></i>
+    <span class="btn-text">Related Posts</span>
+  </span>
+  <ul class="related-posts-menu">{%- for slug in include.project.project_posts -%}{%- for post in site.posts -%}{%- if post.url contains slug -%}<li><a href="{{ post.url | relative_url }}">{{ post.title | default: "Untitled" }}</a></li>{%- break -%}{%- endif -%}{%- endfor -%}{%- endfor -%}</ul>
+</div>
+{%- endif -%}

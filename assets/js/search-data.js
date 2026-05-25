@@ -57,16 +57,76 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "projects-8-bit-cpu",
+          title: '8-bit CPU',
+          description: "8 bit in logisim with assembler",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8bit_cpu/";
+            },},{id: "projects-em6502",
+          title: 'Em6502',
+          description: "Em6502 is an emulator for the MOS-6502 processor in C++.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/em6502/";
             },},{id: "projects-game-of-life",
           title: 'Game of Life',
           description: "a terminal-based version of the popular Conway&#39;s game of life",
           section: "Projects",handler: () => {
               window.location.href = "/projects/game-of-life/";
+            },},{id: "projects-genetic",
+          title: 'genetic',
+          description: "Basic Genetic Algorithm Implementation in Python",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/genetic/";
+            },},{id: "projects-mlwhisperer",
+          title: 'MLWhisperer',
+          description: "Exploring Covert Channels in ML systems",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mlwhisperer/";
+            },},{id: "projects-pong",
+          title: 'Pong',
+          description: "Implementation of the Pong Game in C++ using SFML library",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pong/";
+            },},{id: "projects-pyenigma",
+          title: 'pyenigma',
+          description: "Enigma machine emulator written in python",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pyenigma/";
+            },},{id: "projects-random-binary-networks",
+          title: 'Random Binary Networks',
+          description: "A Simple Implementation of Random Binary Networks in C++",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/random_binary_networks/";
             },},{id: "projects-risc-v-atom",
           title: 'RISC-V Atom',
           description: "An open-source 32-bit RISC-V soft-core processor.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/riscv-atom/";
+            },},{id: "projects-simulations",
+          title: 'simulations',
+          description: "Collection of various maths and physics simulations",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/simulations/";
+            },},{id: "projects-snake",
+          title: 'snake',
+          description: "Snake Game written using SFML in C++",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/snake/";
+            },},{id: "projects-termvcd",
+          title: 'termvcd',
+          description: "A terminal based vcd viewer",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/termvcd/";
+            },},{id: "projects-thunderbolt16",
+          title: 'Thunderbolt16',
+          description: "Thunderbolt16 is a 16-Bit non piplined RISC processor",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/thunderbolt16/";
+            },},{id: "projects-uart-crc",
+          title: 'UART CRC',
+          description: "Cyclic Redundency Check for UART Communication",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/uart_crc/";
             },},{id: "projects-vxdebug-vortex-debug-extension",
           title: 'VxDebug: Vortex Debug Extension',
           description: "External debug spec for Vortex GPGPU",

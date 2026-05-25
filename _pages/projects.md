@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of my cool projects!
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [projects]
 horizontal: false
 ---
 
@@ -61,5 +61,15 @@ horizontal: false
     {% endfor %}
   </div>
   {% endif %}
+{% endif %}
+
+{% assign minor_projects = site.projects | where: "category", "minor" | sort: "importance" %}
+{% if minor_projects.size > 0 %}
+<h2 class="category">minor projects</h2>
+<div class="row row-cols-2 row-cols-md-4 minor-projects-grid">
+  {% for project in minor_projects %}
+    {% include projects_minor.liquid %}
+  {% endfor %}
+</div>
 {% endif %}
 </div>

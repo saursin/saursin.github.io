@@ -3,7 +3,8 @@ layout: page
 title: "VxDebug: Vortex Debug Extension"
 description: External debug spec for Vortex GPGPU
 img: assets/img/projects/vortex_debug/vortex_logo.png
-category: work
+category: projects
+published: true
 pretty_table: true
 toc:
   sidebar: left

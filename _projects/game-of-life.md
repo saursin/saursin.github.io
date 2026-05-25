@@ -4,7 +4,7 @@ title: Game of Life
 description: a terminal-based version of the popular Conway's game of life
 img: assets/img/projects/game-of-life/game_of_life_screenshot.png
 importance: 1
-category: fun
+category: minor
 related_publications: false
 ---
 

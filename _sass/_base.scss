@@ -675,6 +675,8 @@ footer.sticky-bottom {
   .card {
     img {
       width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
     }
   }
 
@@ -1421,60 +1423,6 @@ figure.cover {
   /* mouse over link */
   a.cover-link:hover {
     color: #23212d !important;
-  }
-}
-
-// Minor Projects Grid
-
-.minor-projects-grid {
-  row-gap: 1rem;
-
-  .minor-project-card {
-    .card-img-top {
-      height: 120px;
-      object-fit: cover;
-    }
-
-    .minor-project-placeholder {
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--global-code-bg-color);
-      font-size: 2rem;
-      color: var(--global-text-color-light);
-    }
-
-    .card-body {
-      padding: 0.6rem 0.75rem;
-    }
-
-    .card-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .card-text {
-      font-size: 0.75rem;
-      color: var(--global-text-color-light);
-      margin-bottom: 0.4rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .minor-project-links {
-      display: flex;
-      gap: 0.6rem;
-
-      a {
-        color: var(--global-text-color-light);
-        font-size: 0.95rem;
-        &:hover { color: var(--global-theme-color); }
-      }
-    }
   }
 }
 

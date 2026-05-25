@@ -1,0 +1,35 @@
+{% if project.redirect %}
+  {% assign project_url = project.redirect %}
+{% elsif project.github %}
+  {% assign project_url = project.github %}
+{% else %}
+  {% assign project_url = project.url | relative_url %}
+{% endif %}
+
+<div class="col">
+  <div class="card h-100 minor-project-card hoverable" onclick="window.open('{{ project_url }}', '_blank');" style="cursor: pointer;">
+    {% if project.img %}
+      {% include figure.liquid loading="eager" path=project.img alt=project.title class="card-img-top" %}
+    {% else %}
+      <div class="minor-project-placeholder"><i class="fa-solid fa-code"></i></div>
+    {% endif %}
+    <div class="card-body">
+      <h6 class="card-title">{{ project.title }}</h6>
+      {% if project.description %}
+        <p class="card-text">{{ project.description }}</p>
+      {% endif %}
+      <div class="minor-project-links">
+        {% if project.github %}
+          <a href="{{ project.github }}" target="_blank" onclick="event.stopPropagation();" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        {% endif %}
+        {% unless project.redirect or project.github == project_url %}
+          <a href="{{ project.url | relative_url }}" onclick="event.stopPropagation();" title="Project page">
+            <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i>
+          </a>
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>

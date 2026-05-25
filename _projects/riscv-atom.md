@@ -4,7 +4,7 @@ title: RISC-V Atom
 description: An open-source 32-bit RISC-V soft-core processor.
 img: assets/img/projects/riscv-atom/atom_icon.png
 importance: 1
-category: work
+category: projects
 related_publications: false
 ---
 

@@ -1424,6 +1424,96 @@ figure.cover {
   }
 }
 
+// Google Scholar Metrics Card
+
+.scholar-metrics-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  width: 100%;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+
+  .scholar-metrics-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .scholar-profile-pic {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--global-divider-color);
+  }
+
+  .scholar-metrics-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .scholar-metrics-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--global-text-color);
+
+    i { font-size: 1rem; }
+  }
+
+  .scholar-metrics-stats {
+    display: flex;
+    gap: 2.5rem;
+
+    .scholar-metric {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .scholar-metric-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--global-theme-color);
+        line-height: 1.2;
+      }
+
+      .scholar-metric-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--global-text-color-light);
+      }
+
+      .scholar-metric-since {
+        font-size: 0.68rem;
+        color: var(--global-text-color-light);
+      }
+    }
+  }
+
+  .scholar-profile-link {
+    font-size: 0.8rem;
+    color: var(--global-theme-color);
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  .scholar-updated {
+    font-size: 0.68rem;
+    color: var(--global-text-color-light);
+  }
+}
+
 // Related Posts for Projects
 
 // Hover dropdown on project cards

@@ -1,0 +1,23 @@
+name: Biweekly Rebuild
+
+on:
+  schedule:
+    - cron: '0 6 1,15 * *' # 1st and 15th of every month at 6am UTC
+  workflow_dispatch: # allow manual trigger from GitHub Actions UI
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: saursin
+
+      - name: Trigger rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: monthly rebuild [refresh scholar stats]"
+          git push origin saursin

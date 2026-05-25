@@ -1,5 +1,13 @@
+{% assign _content_len = project.content | strip | size %}
+{% if project.redirect %}
+  {% assign _project_link = project.redirect %}
+{% elsif project.github and _content_len == 0 %}
+  {% assign _project_link = project.github %}
+{% else %}
+  {% assign _project_link = project.url | relative_url %}
+{% endif %}
 <div class="col">
-  <div class="card h-100 hoverable" onclick="window.location='{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}';" style="cursor: pointer;">
+  <div class="card h-100 hoverable" onclick="window.location='{{ _project_link }}';" style="cursor: pointer;">
     {% if project.img %}
       {%
         include figure.liquid

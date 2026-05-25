@@ -1,0 +1,42 @@
+{% assign sp = site.data.scholar_profile %}
+{% assign scholar_id = site.data.socials.scholar_userid %}
+<div class="scholar-metrics-card">
+  <div class="scholar-metrics-left">
+    <img class="scholar-profile-pic" src="{{ '/assets/img/prof_pic.png' | relative_url }}" alt="Profile photo">
+    <div class="scholar-metrics-identity">
+      <div class="scholar-metrics-header">
+        <i class="ai ai-google-scholar"></i>
+        <span>Google Scholar</span>
+      </div>
+      <a href="https://scholar.google.com/citations?user={{ scholar_id }}" target="_blank" rel="noopener" class="scholar-profile-link">
+        View full profile <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i>
+      </a>
+      <span class="scholar-updated">Updated {{ site.time | date: "%b %d, %Y" }}</span>
+    </div>
+  </div>
+  {% if sp %}
+  <div class="scholar-metrics-stats">
+    <div class="scholar-metric">
+      <span class="scholar-metric-value">{{ sp.citations }}</span>
+      <span class="scholar-metric-label">Citations</span>
+      {% if sp.citations_since and sp.since_year %}
+        <span class="scholar-metric-since">{{ sp.citations_since }} since {{ sp.since_year }}</span>
+      {% endif %}
+    </div>
+    <div class="scholar-metric">
+      <span class="scholar-metric-value">{{ sp.h_index }}</span>
+      <span class="scholar-metric-label">h-index</span>
+      {% if sp.h_index_since and sp.since_year %}
+        <span class="scholar-metric-since">{{ sp.h_index_since }} since {{ sp.since_year }}</span>
+      {% endif %}
+    </div>
+    <div class="scholar-metric">
+      <span class="scholar-metric-value">{{ sp.i10_index }}</span>
+      <span class="scholar-metric-label">i10-index</span>
+      {% if sp.i10_index_since and sp.since_year %}
+        <span class="scholar-metric-since">{{ sp.i10_index_since }} since {{ sp.since_year }}</span>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
